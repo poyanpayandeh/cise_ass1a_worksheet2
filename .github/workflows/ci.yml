@@ -27,6 +27,7 @@ jobs:
         run: npm install
 
       - name: Run the tests
+        script: cd frontend
         run: npm test
 
       - name: Build
