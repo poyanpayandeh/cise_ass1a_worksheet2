@@ -1,0 +1,28 @@
+const express = require("express");
+
+const articles = require("./dummydata/articles");
+
+const server = express();
+
+const dotenv = require("dotenv");
+dotenv.config();
+const PORT = process.env.PORT || 5000;
+
+server.get("/", (rew, res) => {
+  res.send("API");
+});
+
+server.get("/api/articles", (req, res) => {
+  res.json(articles);
+});
+
+server.get("/api/articles/:id", (req, res) => {
+  const article = articles.find((n) => n._id === req.params.id);
+  res.send(article);
+  console.log(req.params);
+});
+
+server.listen(
+  PORT,
+  console.log(`Server is working and listening PORT ${PORT}`)
+);
