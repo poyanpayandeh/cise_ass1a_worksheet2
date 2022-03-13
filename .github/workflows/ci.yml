@@ -28,6 +28,8 @@ jobs:
 
       - name: Run the tests
         run: npm test
+        with:
+          entrypoint: /frontend
 
       - name: Build
         run: npm run build
