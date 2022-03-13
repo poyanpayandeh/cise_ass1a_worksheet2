@@ -26,9 +26,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Change Directory
-        script: cd frontend
-
       - name: Run the tests
         run: npm test
 
